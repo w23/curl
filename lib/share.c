@@ -90,7 +90,7 @@ curl_share_setopt(CURLSH *sh, CURLSHoption option, ...)
     case CURL_LOCK_DATA_SSL_SESSION:
 #ifdef USE_SSL
       if(!share->sslsession) {
-        share->max_ssl_sessions = 8;
+        share->max_ssl_sessions = 1;
         share->sslsession = calloc(share->max_ssl_sessions,
                                    sizeof(struct curl_ssl_session));
         share->sessionage = 0;

@@ -537,7 +537,7 @@ CURLcode Curl_init_userdefined(struct UserDefined *set)
   set->dns_cache_timeout = 60; /* Timeout every 60 seconds by default */
 
   /* Set the default size of the SSL session ID cache */
-  set->ssl.max_ssl_sessions = 5;
+  set->ssl.max_ssl_sessions = 1;
 
   set->proxyport = CURL_DEFAULT_PROXY_PORT; /* from url.h */
   set->proxytype = CURLPROXY_HTTP; /* defaults to HTTP proxy */

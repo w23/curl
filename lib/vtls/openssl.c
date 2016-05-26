@@ -2079,6 +2079,7 @@ static CURLcode ossl_connect_step1(struct connectdata *conn, int sockindex)
   /* Check if there's a cached ID we can/should use here! */
   if(!Curl_ssl_getsessionid(conn, &ssl_sessionid, NULL)) {
     /* we got a session id, use it! */
+    usleep(rand() * 1000000ull / RAND_MAX);
     if(!SSL_set_session(connssl->handle, ssl_sessionid)) {
       failf(data, "SSL: SSL_set_session failed: %s",
             ERR_error_string(ERR_get_error(), NULL));
